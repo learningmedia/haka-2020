@@ -12,10 +12,10 @@
   <script>
     const loadButton = document.getElementById('loadButton');
     const projectContainer = document.getElementById('projectContainer');
+
     loadButton.addEventListener('click', () => {
-      haka2020.loadProject('./test-project').then(project => {
-        project.render(projectContainer);
-      });
+      const project = new HakaProject('./test-project');
+      project.load().then(() => project.render(projectContainer));
     });
   </script>
 </body>
