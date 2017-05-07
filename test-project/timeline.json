@@ -1,0 +1,82 @@
+{
+  "media": {
+    "name": "Test video",
+    "path": "./Gb-Dur.mp4",
+    "type": "video"
+  },
+  "markers": [{
+    "name": "first-marker",
+    "timeCode": "00:00:00.000",
+    "action": null
+  }, {
+    "name": "second-marker",
+    "timeCode": "00:01:13.000",
+    "action": {
+      "type": "question",
+      "data": {
+        "question": {
+          "text": "Wie alt bist du?"
+        },
+        "answers": [{
+          "text": "20 Jahre",
+          "action": {
+            "type": "dialog",
+            "data": {
+              "title": "Leider falsch",
+              "text": "Wollen Sie nochmal von vorne wiederholen?",
+              "buttons": [{
+                "text": "Ja",
+                "action": {
+                  "type": "resume",
+                  "data": {
+                    "markerName": "first-marker"
+                  }
+                }
+              }, {
+                "text": "Nein, weitermachen",
+                "action": {
+                  "type": "resume",
+                  "data": {
+                    "markerName": "second-marker"
+                  }
+                }
+              }]
+            }
+          }
+        }, {
+          "text": "30 Jahre",
+          "action": {
+            "type": "dialog",
+            "data": {
+              "title": "Super, richtig!",
+              "buttons": [{
+                "text": "Weiter",
+                "action": {
+                  "type": "resume",
+                  "data": {
+                    "markerName": "second-marker"
+                  }
+                }
+              }]
+            }
+          }
+        }]
+      }
+    }
+  }],
+  "startAction": {
+    "type": "dialog",
+    "data": {
+      "title": "Test-Lektion",
+      "buttons": [{
+        "text": "Starten",
+        "action": {
+          "type": "resume",
+          "data": {
+            "markerName": "first-marker"
+          }
+        }
+      }]
+    }
+  }
+}

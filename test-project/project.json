@@ -1,0 +1,22 @@
+{
+  "title": "Test project",
+  "version": "1.0.0",
+  "authors": [{
+    "name": "Johann Sebastian Mozart",
+    "name": "Wolfgang Amadeus Bach"
+  }],
+  "website": "https://test-website.com",
+  "assets": [{
+    "name": "Test video",
+    "type": "video",
+    "path": "./Gb-Dur.mp4"
+  }, {
+    "name": "Test timeline",
+    "type": "timeline",
+    "path": "./timeline.json"
+  }],
+  "main": {
+    "type": "timeline",
+    "path": "./timeline.json"
+  }
+}
