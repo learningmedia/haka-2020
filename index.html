@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HAKA-2020 Test Page</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <div><button id="loadButton">Load Test Project</button></div>
+  <br>
+  <div id="projectContainer"></div>
+  <script src="app/haka-2020.js"></script>
+  <script>
+    const loadButton = document.getElementById('loadButton');
+    const projectContainer = document.getElementById('projectContainer');
+    loadButton.addEventListener('click', () => {
+      haka2020.loadProject('./test-project').then(project => {
+        project.render(projectContainer);
+      });
+    });
+  </script>
+</body>
+</html>
